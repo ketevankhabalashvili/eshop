@@ -22,8 +22,7 @@ class CreateUsersTable extends Migration
             $table->mediumText('profile_image')->nullable()->default('default/avatar.png');
             $table->date('birth_date')->nullable();
             $table->string('phone')->nullable();
-            $table->unsignedBigInteger('foreign_role_ID')->nullable();
-            $table->foreign('foreign_role_ID')->references('id')->on('user_roles')->onDelete('cascade');
+            $table->enum('permission',  ['admin', 'user'])->nullable()->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
