@@ -19,6 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->mediumText('profile_image')->nullable()->default('default/avatar.png');
+            $table->date('birth_date')->nullable();
+            $table->string('phone')->nullable();
+            $table->unsignedBigInteger('foreign_role_ID')->nullable();
+            $table->foreign('foreign_role_ID')->references('id')->on('user_roles')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });
