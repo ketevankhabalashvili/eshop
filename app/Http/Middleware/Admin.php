@@ -18,7 +18,7 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->permission == 'admin')
+        if (Auth::user()->permission == 'Admin')
         {
             return $next($request);
         }

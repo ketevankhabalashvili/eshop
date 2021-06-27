@@ -18,7 +18,7 @@ class Client
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->permission == 'admin' && Auth::user()->permission == 'user')
+        if (Auth::user()->permission == 'Admin' && Auth::user()->permission == 'user')
         {
             return $next($request);
         }
