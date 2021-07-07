@@ -18,14 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('Admin', ['middleware' => 'Admin', function () {
-    //
-}]);
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
 
-Route::get('client', ['middleware' => 'client', function () {
+});
+
+Route::group(['prefix' => '', 'middleware' => ['auth', 'client']], function () {
     //
-}]);
+});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
