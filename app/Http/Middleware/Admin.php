@@ -18,12 +18,13 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->permission == 'Admin')
+//        dd(Auth::user());
+        if (Auth::user()->permission == 'admin')
         {
             return $next($request);
         }
         else {
-            return redirect::back()->with('danger-status', 'თქვენ აკრძალული გაქვთ წვდომა მოცემულ გვერდზე');
+            return redirect::back()->with('danger-status', 'Access denied!');
         }
     }
 }

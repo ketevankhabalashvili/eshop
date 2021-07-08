@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->mediumText('profile_image')->nullable()->default('default/avatar.png');
             $table->date('birth_date')->nullable();
             $table->string('phone')->nullable();
-            $table->enum('permission',  ['Admin', 'user'])->nullable()->default('user');
+            $table->enum('permission',  ['admin', 'user'])->nullable()->default('user');
             $table->rememberToken();
             $table->timestamps();
         });

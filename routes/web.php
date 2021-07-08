@@ -20,6 +20,14 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
 
+    Route::resource('users', 'App\Http\Controllers\Admin\UserController');
+    Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
+    Route::resource('orders', 'App\Http\Controllers\Admin\OrderController');
+    Route::resource('products', 'App\Http\Controllers\Admin\ProductController');
+    Route::resource('productImages', 'App\Http\Controllers\Admin\ProductImageController');
+    Route::resource('advertisements', 'App\Http\Controllers\Admin\AdvertisementController');
+    Route::get('/', 'App\Http\Controllers\Admin\MainController@home');
+
 });
 
 Route::group(['prefix' => '', 'middleware' => ['auth', 'client']], function () {
