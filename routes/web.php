@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin'], 'as'=>'admin.'], function () {
 
     Route::get('/','App\Http\Controllers\Admin\MainController@main')->name('main');
-    Route::resource('users', 'App\Http\Controllers\Admin\UserController');
+    Route::resource('users', 'App\Http\Controllers\Admin\UserController', ['except' => ['create', 'store']]);
     Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
     Route::resource('orders', 'App\Http\Controllers\Admin\OrderController');
     Route::resource('products', 'App\Http\Controllers\Admin\ProductController');
