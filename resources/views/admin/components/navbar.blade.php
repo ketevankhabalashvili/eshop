@@ -31,17 +31,21 @@
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <i class="now-ui-icons users_single-02"></i>
+                        @if(isset(Auth::user()->name))
+
                         {{ Auth::user()->name }}
+
+                        @endif
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        <a class="dropdown-item" @if (Route::has('logout')) href="{{ route('logout') }} @endif"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        <form id="logout-form" @if (Route::has('logout')) action="{{ route('logout') }}" @endif method="POST" class="d-none">
                             @csrf
                         </form>
                     </div>
