@@ -22,7 +22,6 @@
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/now-ui-dashboard.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/dataTables.min.css') }}" rel="stylesheet" />
 
 
 </head>
@@ -48,8 +47,6 @@
 <script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
 <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('assets/js/dataTables.bootstrap.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugins/bootstrap-notify.js') }}"></script>
